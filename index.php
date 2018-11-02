@@ -1,31 +1,11 @@
 <?php
 
+require 'functions.php';
 
-class Task {
-    public $description;
+require 'Task.php';
 
-    public $completed = false;
+$pdo = connectoDB();
 
-    public function __contsruct($description)
-    {
-        $this->description = $description;
-    }
-
-    public function complete()
-    {   
-        $this->completed = true;
-    }
-    public function isComplete()
-    {
-        return $this->completed;
-    }
-    
-}
-
-$tasks = [
-    new Task('Go to the store'),
-    new Task('Finish my screencast'),
-    new Task('Clean my room')
-];
+$tasks = fetchAllTasks($pdo);
 
 require 'index.view.php';
