@@ -7,11 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Task For The Day</h1>
     <ul>
-            <?php foreach ($task as $items => $val): ?>
-                <li><strong><?= $items; ?></strong><?= $val; ?></li>
-            <?php endforeach; ?>
-       </ul>
+        <?php foreach ($tasks as $task) : ?>
+            <li><?= $task->description; ?></li>
+        <?php endforeach; ?> 
+    </ul>
 </body>
 </html>
